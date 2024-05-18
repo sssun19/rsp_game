@@ -6,7 +6,8 @@ class GameResult extends StatelessWidget {
   final Result? result;
   final VoidCallback callback;
 
-  const GameResult({this.result, required this.callback, required this.isDone, super.key});
+  const GameResult(
+      {this.result, required this.callback, required this.isDone, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,12 @@ class GameResult extends StatelessWidget {
             style: const TextStyle(fontSize: 32),
           ),
           const SizedBox(height: 8),
-          TextButton(child: const Text('다시 하기'),
-          onPressed: () => callback.call()),
+          TextButton(
+              child: const Text(
+                '다시 하기',
+                style: TextStyle(fontSize: 24),
+              ),
+              onPressed: () => callback.call()),
         ],
       );
     }
