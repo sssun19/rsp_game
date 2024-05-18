@@ -6,7 +6,7 @@ class InputCard extends StatelessWidget {
   final Widget child;
 
   const InputCard({
-    required this.callback,
+    this.callback, //인자가 선택적인 경우 required 키워드 삭제하여 선택적으로 받기
     required this.child,
     super.key,
   });

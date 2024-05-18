@@ -6,4 +6,6 @@ enum InputType {
   paper;
 
   String get path => '$assetPath/$name.png';
+
+
 }

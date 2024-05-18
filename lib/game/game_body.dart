@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:part2_srp_game/game/enum.dart';
 import 'package:part2_srp_game/game/widget/user_input.dart';
@@ -15,19 +17,21 @@ class GameBody extends StatefulWidget {
 class _GameBodyState extends State<GameBody> {
   late bool isDone;
   late InputType? _userInput;
+  late InputType _cpuInput;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     isDone = false;
+    setCpuInput();
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: CpuInput(isDone: isDone)),
+        Expanded(child: CpuInput(isDone: isDone, cpuInput: _cpuInput)),
         Expanded(child: GameResult(isDone: isDone)),
         Expanded(child: UserInput(isDone: isDone, callback: setUserInput)),
       ],
@@ -40,4 +44,10 @@ class _GameBodyState extends State<GameBody> {
       _userInput = userInput;
     });
   }
+
+  void setCpuInput() {
+    final random = Random();
+    _cpuInput = InputType.values[random.nextInt(3)];
+  }
+
 }
