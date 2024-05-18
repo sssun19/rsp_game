@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:part2_srp_game/game/widget/enum.dart';
+import 'package:part2_srp_game/game/enum.dart';
 
 import 'input_card.dart';
 

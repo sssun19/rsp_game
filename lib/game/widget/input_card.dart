@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:part2_srp_game/game/widget/enum.dart';
 
 
 class InputCard extends StatelessWidget {
